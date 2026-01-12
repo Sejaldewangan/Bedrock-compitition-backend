@@ -21,7 +21,8 @@ const playerRegistrationSchema = new mongoose.Schema({
   },
   phoneNumber: {
     type: String,      
-    required: false    
+    required: false  ,
+    min: [10, "Phone number must be at least 10 digits"]  
   },
   age: {
     type: Number,

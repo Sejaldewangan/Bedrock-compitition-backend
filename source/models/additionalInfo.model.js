@@ -5,7 +5,7 @@ const additionalInfoSchema = new mongoose.Schema({
     type: String,
     required: true, 
   
-    enum: ["Entry Level", "Intermediate", "Senior", "Expert"] 
+    // enum: ["Entry Level", "Intermediate", "Senior", "Expert"] 
   },
   state: {
     type: String,

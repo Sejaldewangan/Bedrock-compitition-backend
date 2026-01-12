@@ -14,7 +14,8 @@ const createRegister = async (req, res) => {
         if (!validName) return res.status(400).json({ error: "name is required" });
         const exists = await Register.findOne({ name });
         if (exists) return res.status(409).json({ error: "this user already exists" });
-        const created = await Register.create(req.body,);
+        const created = await Register.create(req.body);
+        console.log(req.body);
         return res.status(201).json(created);
     } catch (err) {
         return handleError(res, err);
@@ -133,6 +134,7 @@ const createAdditionalInfo = async (req, res) => {
         const exists = await AdditionalInfo.findOne({ experienceLevel: validExperienceLevel, state: validState, area: validArea });
         if (exists) return res.status(409).json({ error: "this user already exists" });
         const created = await AdditionalInfo.create({ experienceLevel, state, area });
+        console.log(req.body);
         return res.status(201).json(created);
     } catch (err) {
         return handleError(res, err);
